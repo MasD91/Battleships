@@ -37,37 +37,37 @@ class Player:
         battleships_placed = 0
 
         while battleships_placed < num_battleships:
-            x = random.randint(0, size - 1)
-            y = random.randint(0, size - 1)
+            row = random.randint(0, size - 1)
+            column = random.randint(0, size - 1)
 
-            if self.grid[x][y] == 'O':
-                self.grid[x][y] = 'B'
-                self.battleships.append((x, y))
+            if self.grid[row][column] == 'O':
+                self.grid[row][column] = 'B'
+                self.battleships.append((row, column))
                 battleships_placed += 1
 
     def is_off_grid(self, guess):
         """
         Check if the guess is off the grid.
         """
-        x, y = guess
-        return x < 0 or x >= GRID_SIZE or y < 0 or y >= GRID_SIZE
+        row, column = guess
+        return row < 0 or row >= GRID_SIZE or column < 0 or column >= GRID_SIZE
 
     def is_hit(self, guess):
         """
         Check if the guess hits a battleship.
         """
-        x, y = guess
-        return (x, y) in self.battleships
+        row, column = guess
+        return (row, column) in self.battleships
 
     def update_enemy_grid(self, guess, result):
         """
         Update the enemy grid with the result of the guess.
         """
-        x, y = guess
+        row, column = guess
         if result == 'Hit':
-            self.enemy_grid[x][y] = 'X'
+            self.enemy_grid[row][column] = 'X'
         else:
-            self.enemy_grid[x][y] = 'M'
+            self.enemy_grid[row][column] = 'M'
 
     def print_grids(self):
         """
@@ -114,24 +114,24 @@ def play_game():
             continue
 
         try:
-            x = int(guess[0])
-            y = int(guess[1])
+            row = int(guess[0])
+            column = int(guess[1])
         except ValueError:
             print("Invalid guess. Please enter two numbers.")
             continue
 
-        if current_player.is_off_grid((x, y)):
+        if current_player.is_off_grid((row, column)):
             print("Guess is off-grid. Try again.")
             continue
 
-        if current_player.is_hit((x, y)):
+        if current_player.is_hit((row, column)):
             print("Hit!")
-            current_player.update_enemy_grid((x, y), 'Hit')
-            opponent.update_enemy_grid((x, y), 'Hit')
+            current_player.update_enemy_grid((row, column), 'Hit')
+            opponent.update_enemy_grid((row, column), 'Hit')
         else:
             print("Miss!")
-            current_player.update_enemy_grid((x, y), 'Miss')
-            opponent.update_enemy_grid((x, y), 'Miss')
+            current_player.update_enemy_grid((row, column), 'Miss')
+            opponent.update_enemy_grid((row, column), 'Miss')
 
         if all(cell == 'X' for row in opponent.enemy_grid for cell in row):
             print(f"\n{current_player.name}! You sank all the Battleships.")
