@@ -1,7 +1,10 @@
 """
 Battleships Game
 
-This program allows two players to play the Battleships game on separate grids. Each player's fleet of battleships is marked on their own grid, and players take turns guessing the locations of the opponent's battleships. The objective is to destroy the opponent's fleet by guessing the correct coordinates.
+This program allows two players to play the Battleships game on separate grids.
+Each player's fleet of battleships is marked on their own grid.
+Players take turns guessing the locations of the opponent's battleships.
+You must destroy the opponent's fleet by guessing the correct coordinates.
 
 """
 
