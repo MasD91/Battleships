@@ -1,31 +1,29 @@
-![CI logo](https://codeinstitute.s3.amazonaws.com/fullstack/ci_logo_small.png)
+# Battleships Game
 
-Welcome MasD91,
+This is a Python program that allows two players to play the Battleships game on separate grids. Each player's fleet of battleships is marked on their own grid. Players take turns guessing the locations of the opponent's battleships, aiming to destroy the entire fleet.
 
-This is the Code Institute student template for deploying your third portfolio project, the Python command-line project. The last update to this file was: **August 17, 2021**
+## Description
 
-## Reminders
+The Battleships Game is a turn-based, 2-player game where players strategically guess the coordinates to hit the opponent's battleships. The game provides a user-friendly interface and an immersive gameplay experience.
 
-* Your code must be placed in the `run.py` file
-* Your dependencies must be placed in the `requirements.txt` file
-* Do not edit any of the other files or your code may not deploy properly
+## Features
 
-## Creating the Heroku app
+- Supports 2 players
+- Interactive grid display
+- Turn-based gameplay
+- Real-time feedback on hit or miss
+- Automatic board flipping between players
+- End-of-game detection and winner declaration
 
-When you create the app, you will need to add two buildpacks from the _Settings_ tab. The ordering is as follows:
+## How to Play
 
-1. `heroku/python`
-2. `heroku/nodejs`
+1. Either launch from terminal using python3 run.py command or deploy from live heroku link 
 
-You must then create a _Config Var_ called `PORT`. Set this to `8000`
+2. Make sure you have Python installed on your system.
 
-If you have credentials, such as in the Love Sandwiches project, you must create another _Config Var_ called `CREDS` and paste the JSON into the value field.
+3. Open a terminal or command prompt and navigate to the directory where `battleships.py` is located.
 
-Connect your GitHub repository and deploy as normal.
+4. Run the following command to start the game:
 
-## Constraints
-
-The deployment terminal is set to 80 columns by 24 rows. That means that each line of text needs to be 80 characters or less otherwise it will be wrapped onto a second line.
-
------
-Happy coding!
+   ```shell
+   python battleships.py
