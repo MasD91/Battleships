@@ -4,7 +4,10 @@ Battleships Game
 This program allows two players to play the Battleships game on separate grids.
 Each player's fleet of battleships is marked on their own grid.
 Players take turns guessing the locations of the opponent's battleships.
+This is a 2 player turn based game.
+After your go is over, the board flips to the next players view.
 You must destroy the opponent's fleet by guessing the correct coordinates.
+
 
 """
 
@@ -14,7 +17,17 @@ GRID_SIZE = 5
 
 
 class Player:
+    """
+    Class representing a player in the Battleships game.
+    """
+
     def __init__(self, name):
+        """
+        Initialize a new Player instance.
+
+        Args:
+            name (str): The name of the player.
+        """
         self.name = name
         self.grid = self.create_grid()
         self.enemy_grid = self.create_grid()
@@ -32,6 +45,9 @@ class Player:
     def place_battleships(self, num_battleships):
         """
         Place the battleships on the grid.
+
+        Args:
+            num_battleships (int): The number of battleships to be placed.
         """
         size = len(self.grid)
         battleships_placed = 0
@@ -48,6 +64,12 @@ class Player:
     def is_off_grid(self, guess):
         """
         Check if the guess is off the grid.
+
+        Args:
+            guess (tuple): The (row, column) coordinates of the guess.
+
+        Returns:
+            bool: True if the guess is off the grid, False otherwise.
         """
         row, column = guess
         return row < 0 or row >= GRID_SIZE or column < 0 or column >= GRID_SIZE
@@ -55,6 +77,12 @@ class Player:
     def is_hit(self, guess):
         """
         Check if the guess hits a battleship.
+
+        Args:
+            guess (tuple): The (row, column) coordinates of the guess.
+
+        Returns:
+            bool: True if the guess hits a battleship, False otherwise.
         """
         row, column = guess
         return (row, column) in self.battleships
@@ -62,6 +90,10 @@ class Player:
     def update_enemy_grid(self, guess, result):
         """
         Update the enemy grid with the result of the guess.
+
+        Args:
+            guess (tuple): The (row, column) coordinates of the guess.
+            result (str): The result of the guess, either 'Hit' or 'Miss'.
         """
         row, column = guess
         if result == 'Hit':
@@ -82,12 +114,18 @@ class Player:
     def print_grid(self, grid):
         """
         Print the grid.
+
+        Args:
+            grid (list): The grid to be printed.
         """
         for row in grid:
             print(' '.join(row))
 
 
 def play_game():
+    """
+    Function to play the Battleships game.
+    """
     print("Welcome to Battleships!")
     player1_name = input("Enter Player 1's name: ")
     player2_name = input("Enter Player 2's name: ")
