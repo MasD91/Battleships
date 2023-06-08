@@ -127,6 +127,14 @@ def play_game():
     Function to play the Battleships game.
     """
     print("Welcome to Battleships!")
+    print("Welcome to Battleships!")
+    print("Two players play the Battleships game on separate grids.")
+    print("Each player's fleet of battleships is marked on their own grid.")
+    print("Guess the locations of the opponent's battleships.")
+    print("This is a 2-player turn-based game.")
+    print("After your go is over, the board flips to the next player's view.")
+    print("Destroy the opponent's fleet by guessing the correct coordinates.")
+
     player1_name = input("Enter Player 1's name: ")
     player2_name = input("Enter Player 2's name: ")
 
