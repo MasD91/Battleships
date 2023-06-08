@@ -23,36 +23,24 @@ The Battleships Game is a turn-based, 2-player game where players strategically 
 
 2. Make sure you have Python installed on your system.
 
-3. Open a terminal or command prompt and navigate to the directory where `battleships.py` is located.
+3. Enter the names of the two players and the number of battleships to place on the grid.
 
-4. Run the following command to start the game:
+4. Players take turns guessing the coordinates to hit the opponent's battleships. The grid will be displayed, showing your own grid and the enemy grid. Feedback will be provided on whether the guess was a hit or a miss.
 
-   ```shell
-   python battleships.py
-5. Enter the names of the two players and the number of battleships to place on the grid.
+5. Continue guessing until you destroy all the opponent's battleships or until the game ends.
 
-6. Players take turns guessing the coordinates to hit the opponent's battleships. The grid will be displayed, showing your own grid and the enemy grid. Feedback will be provided on whether the guess was a hit or a miss.
-
-7. Continue guessing until you destroy all the opponent's battleships or until the game ends.
-
-
-markdown
-Copy code
-![Screenshot](path/to/screenshot.png)
-
-Replace path/to/screenshot.png with the actual path to your screenshot image file.
-
-5. Repeat the above steps to add more screenshots if desired.
+6. The game will declare a winner once all battleships for either you or your opponent are sunk.
 
 ## Technologies Used
 
 1. Python
 2. Git
+3. Heroku
 
 ## Testing
 
 1. The code has been tested on various scenarios to ensure correct behavior and accurate gameplay.
-2. The W3C Markup Validator and W3C CSS Validator Services were used to validate the code for any syntax errors.
+2. I have tested for incorrect input data eg, the number being greater or smaller than the grid requirements and only being able to input numbers and not words.
 
 ## Known Issues
 

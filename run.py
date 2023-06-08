@@ -121,6 +121,19 @@ class Player:
         for row in grid:
             print(' '.join(row))
 
+    def all_battleships_sunk(self):
+        """
+        Check if all battleships are sunk.
+
+        Returns:
+            bool: True if all battleships are sunk, False otherwise.
+        """
+        for row in self.grid:
+            for cell in row:
+                if cell == 'B':
+                    return False
+        return True
+
 
 def play_game():
     """
@@ -159,8 +172,8 @@ def play_game():
             continue
 
         try:
-            row = int(guess[0])
-            column = int(guess[1])
+            row = int(guess[0]) - 1  # Subtract 1 to match the 0-based indexing
+            column = int(guess[1]) - 1  # Subtract 1 to match the 0-based
         except ValueError:
             print("Invalid guess. Please enter two numbers.")
             continue
@@ -169,17 +182,16 @@ def play_game():
             print("Guess is off-grid. Try again.")
             continue
 
-        if current_player.is_hit((row, column)):
+        if opponent.is_hit((row, column)):
             print("Hit!")
-            current_player.update_enemy_grid((row, column), 'Hit')
             opponent.update_enemy_grid((row, column), 'Hit')
         else:
             print("Miss!")
-            current_player.update_enemy_grid((row, column), 'Miss')
             opponent.update_enemy_grid((row, column), 'Miss')
 
-        if all(cell == 'X' for row in opponent.enemy_grid for cell in row):
+        if opponent.all_battleships_sunk():
             print(f"\n{current_player.name}! You sank all the Battleships.")
+            print("Game Over!")
             break
 
         current_player, opponent = opponent, current_player
