@@ -23,7 +23,20 @@ The Battleships Game is a turn-based, 2-player game where players strategically 
 
 
 - Real-time feedback on hit or miss
+![Screenshot](/images/hit.jpg)
+
+![Screenshot](/images/miss.jpg)
+
+
+- Real-time feedback on incorrect input data
+![Screenshot](/images/cat-dog.jpg)
+![Screenshot](/images/7-7.jpg)
+
+
 - Automatic board flipping between players
+![Screenshot](/images/flip-grid.jpg)
+
+
 - End-of-game detection and winner declaration
 
 ## How to Play
@@ -50,6 +63,7 @@ The Battleships Game is a turn-based, 2-player game where players strategically 
 
 1. The code has been tested on various scenarios to ensure correct behavior and accurate gameplay.
 2. I have tested for incorrect input data eg, the number being greater or smaller than the grid requirements and only being able to input numbers and not words.
+3. All features of game can be seen tested in features section above.
 
 ## Known Issues
 
