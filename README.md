@@ -38,6 +38,8 @@ The Battleships Game is a turn-based, 2-player game where players strategically 
 
 
 - End-of-game detection and winner declaration
+![Screenshot](/images/game-over.jpg)
+
 
 ## How to Play
 
