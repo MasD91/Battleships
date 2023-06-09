@@ -11,15 +11,34 @@
     <title>Python Terminal by Code Institute</title>
     <style>
         body {
-            font-family: Arial;
+            font-family: Arial, sans-serif;
+            background-color: #333333;
+            margin: 0;
+            padding: 0;
         }
 
-        /**
-        * Default styles for xterm.js
-        */
+        button {
+            width: 200px;
+            height: 40px;
+            background-color: #E84610;
+            border: 1px solid #555555;
+            color: white;
+            text-transform: uppercase;
+            margin: 10px;
+            border-radius: 8px;
+        }
+
+        button:hover {
+            background-color: #FF5733;
+        }
+
+        #terminal {
+            background-color: #222222;
+            color: #FFFFFF;
+            padding: 20px;
+        }
 
         .xterm {
-            font-feature-settings: "liga"0;
             position: relative;
             user-select: none;
             -ms-user-select: none;
@@ -34,10 +53,6 @@
         .xterm .xterm-helpers {
             position: absolute;
             top: 0;
-            /**
-        * The z-index of the helpers must be higher than the canvases in order for
-        * IMEs to appear on top.
-        */
             z-index: 5;
         }
 
@@ -45,7 +60,6 @@
             padding: 0;
             border: 0;
             margin: 0;
-            /* Move textarea out of the screen to the far left, so that the cursor is not visible */
             position: absolute;
             opacity: 0;
             left: -9999em;
@@ -53,29 +67,13 @@
             width: 0;
             height: 0;
             z-index: -5;
-            /** Prevent wrapping so the IME appears against the textarea at the correct position */
             white-space: nowrap;
             overflow: hidden;
             resize: none;
         }
 
-        .xterm .composition-view {
-            /* TODO: Composition position got messed up somewhere */
-            background: #000;
-            color: #FFF;
-            display: none;
-            position: absolute;
-            white-space: nowrap;
-            z-index: 1;
-        }
-
-        .xterm .composition-view.active {
-            display: block;
-        }
-
         .xterm .xterm-viewport {
-            /* On OS X this is required in order for the scroll bar to appear fully opaque */
-            background-color: #000;
+            background-color: #000000;
             overflow-y: scroll;
             cursor: default;
             position: absolute;
@@ -83,8 +81,6 @@
             left: 0;
             top: 0;
             bottom: 0;
-            background-color: rgb(0, 0, 0);
-            width: 730px;
         }
 
         .xterm .xterm-screen {
@@ -115,7 +111,6 @@
         }
 
         .xterm.enable-mouse-events {
-            /* When mouse events are enabled (eg. tmux), revert to the standard pointer cursor */
             cursor: default;
         }
 
@@ -124,7 +119,6 @@
         }
 
         .xterm.column-select.focus {
-            /* Column selection mode */
             cursor: crosshair;
         }
 
@@ -154,6 +148,7 @@
         .xterm-underline {
             text-decoration: underline;
         }
+
 
         button {
             width: 200px;
