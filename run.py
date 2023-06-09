@@ -87,6 +87,14 @@ class Player:
         row, column = guess
         return (row, column) in self.battleships
 
+    def update_own_grid(self, guess, result):
+        """
+        Update your own grid with the result of the guess.
+        """
+        row, column = guess
+        if result == 'Hit':
+            self.grid[row][column] = 'X'
+   
     def update_enemy_grid(self, guess, result):
         """
         Update the enemy grid with the result of the guess.
@@ -128,11 +136,13 @@ class Player:
         Returns:
             bool: True if all battleships are sunk, False otherwise.
         """
+        battleships_left = 0
+
         for row in self.grid:
             for cell in row:
                 if cell == 'B':
-                    return False
-        return True
+                    battleships_left += 1
+        return battleships_left == 0
 
 
 def play_game():
@@ -184,7 +194,8 @@ def play_game():
 
         if opponent.is_hit((row, column)):
             print("Hit!")
-            opponent.update_enemy_grid((row, column), 'Hit')
+            current_player.update_enemy_grid((row, column), 'Hit')
+            opponent.update_own_grid((row, column), 'Hit')
         else:
             print("Miss!")
             opponent.update_enemy_grid((row, column), 'Miss')
