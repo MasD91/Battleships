@@ -11,8 +11,17 @@ The Battleships Game is a turn-based, 2-player game where players strategically 
 ## Features
 
 - Supports 2 players
+![Screenshot](/images/2-player.jpg)
+
+
 - Interactive grid display
+![Screenshot](/images/grid-display.jpg)
+
+
 - Turn-based gameplay
+![Screenshot](/images/turn-based.jpg)
+
+
 - Real-time feedback on hit or miss
 - Automatic board flipping between players
 - End-of-game detection and winner declaration
